@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Список справ (REST API PRACTIC#4)</title>
+</head>
+<body>
+    <div class="todo-container">
+        <h1>My TO-DO List</h1>
+
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="Що на цей раз замислив?" autocomplete="off">
+            <button type="submit">Додати</button>
+        </form>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Всі</button>
+            <button class="filter-btn" data-filter="active">Активні</button>
+            <button class="filter-btn" data-filter="done">Виконані</button>
+        </div>
+
+        <ul id="todo-list"></ul>
+
+        <div class="todo-stats">
+            Всього завдань: <span id="tasks-counter">0</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+/* -------- ФОН -------- */
+    background-image: url('img/65bf1e01-a963-401c-8280-064d0cc8dff0.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.todo-container {
+    background: #48CAE4;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+#todo-input:focus {
+    border-color: #007bff;
+}
+
+button {
+    padding: 10px 16px;
+    background-color: #D4A373;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #FFB703;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #ffffff; 
+    border: 1px solid #90E0EF;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+li:hover {
+    border-color: #FFB703; /* Шафрановий колір одягу кочівників */
+    background-color: rgba(255, 255, 255, 0.9); /* Легке просвітлення фону елемента */
+    box-shadow: 0 4px 12px rgba(255, 183, 3, 0.3);
+}
+
+li span {
+    flex: 1;
+    cursor: pointer;
+    word-break: break-all;
+    font-size: 14px;
+    color: #3A2E2B;
+}
+
+li button {
+    background-color: #D90429;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+li button:hover {
+   background-color: #8D0801;
+}
+
+
+li.completed {
+    background-color: #EDF2F4;
+    border-color: #ced4da;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: #adb5bd;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.filters button {
+    flex: 1;
+}
+
+.filters button.active {
+    background-color: #FFB703;
+}
+
+li .edit-btn {
+    background-color: #0077B6;
+}
+
+li .edit-btn:hover {
+    background-color: #023E8A;
+}
+
+.todo-stats {
+    font-size: 13px;
+    color: #666;
+    text-align: right;
+}
