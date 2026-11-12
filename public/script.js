@@ -4,17 +4,15 @@ const list = document.getElementById("todo-list");
 const counter = document.getElementById("tasks-counter");
 const filterButtons = document.querySelectorAll(".filter-btn");
 
-let tasks = [];      // сюди зберігаємо завдання з сервера
-let filter = "all";  // all - всі, active - активні, done - виконані
+let tasks = [];
+let filter = "all";
 
-// Отримати завдання з сервера
 async function loadTasks() {
     const response = await fetch("/api/tasks");
     tasks = await response.json();
     showTasks();
 }
 
-// Показати завдання на сторінці (з урахуванням фільтра)
 function showTasks() {
     list.innerHTML = "";
     counter.textContent = tasks.length;
@@ -26,7 +24,6 @@ function showTasks() {
         const li = document.createElement("li");
         if (task.done) li.classList.add("completed");
 
-        // клік по тексту - відмітити виконаним
         const span = document.createElement("span");
         span.textContent = task.title;
         span.addEventListener("click", () => toggleTask(task));
@@ -45,7 +42,6 @@ function showTasks() {
     }
 }
 
-// Додати нове завдання
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -62,13 +58,11 @@ form.addEventListener("submit", async (event) => {
     loadTasks();
 });
 
-// Видалити завдання
 async function deleteTask(id) {
     await fetch("/api/tasks/" + id, { method: "DELETE" });
     loadTasks();
 }
 
-// Відмітити виконаним / невиконаним
 async function toggleTask(task) {
     await fetch("/api/tasks/" + task.id, {
         method: "PUT",
@@ -78,7 +72,6 @@ async function toggleTask(task) {
     loadTasks();
 }
 
-// Змінити текст завдання
 async function editTask(task) {
     const newTitle = prompt("Змінити завдання:", task.title);
     if (newTitle === null || newTitle.trim() === "") return;
@@ -91,7 +84,6 @@ async function editTask(task) {
     loadTasks();
 }
 
-// Кнопки фільтрів
 for (const button of filterButtons) {
     button.addEventListener("click", () => {
         filter = button.dataset.filter;
